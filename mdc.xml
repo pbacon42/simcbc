@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE LIGO_LW SYSTEM "http://ldas-sw.ligo.caltech.edu/doc/ligolwAPI/html/ligolw_dtd.txt">
+<LIGO_LW>
+	<Table Name="sim_inspiral:table">
+		<Column Type="real_4" Name="sim_inspiral:theta0"/>
+		<Column Type="int_4s" Name="sim_inspiral:geocent_end_time_ns"/>
+		<Column Type="int_4s" Name="sim_inspiral:amp_order"/>
+		<Column Type="real_8" Name="sim_inspiral:end_time_gmst"/>
+		<Column Type="real_4" Name="sim_inspiral:coa_phase"/>
+		<Column Type="real_4" Name="sim_inspiral:mchirp"/>
+		<Column Type="int_4s" Name="sim_inspiral:numrel_mode_min"/>
+		<Column Type="int_4s" Name="sim_inspiral:numrel_mode_max"/>
+		<Column Type="lstring" Name="sim_inspiral:source"/>
+		<Column Type="real_4" Name="sim_inspiral:latitude"/>
+		<Column Type="lstring" Name="sim_inspiral:numrel_data"/>
+		<Column Type="int_4s" Name="sim_inspiral:geocent_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:spin2x"/>
+		<Column Type="real_4" Name="sim_inspiral:spin2y"/>
+		<Column Type="real_4" Name="sim_inspiral:spin2z"/>
+		<Column Type="ilwd:char" Name="sim_inspiral:process_id"/>
+		<Column Type="int_4s" Name="sim_inspiral:h_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:distance"/>
+		<Column Type="int_4s" Name="sim_inspiral:t_end_time"/>
+		<Column Type="lstring" Name="sim_inspiral:taper"/>
+		<Column Type="real_4" Name="sim_inspiral:longitude"/>
+		<Column Type="int_4s" Name="sim_inspiral:v_end_time_ns"/>
+		<Column Type="int_4s" Name="sim_inspiral:bandpass"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_l"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_h"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_g"/>
+		<Column Type="int_4s" Name="sim_inspiral:t_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:spin1y"/>
+		<Column Type="real_4" Name="sim_inspiral:spin1x"/>
+		<Column Type="real_4" Name="sim_inspiral:spin1z"/>
+		<Column Type="int_4s" Name="sim_inspiral:h_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_t"/>
+		<Column Type="int_4s" Name="sim_inspiral:l_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha2"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha3"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha1"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha6"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha4"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha5"/>
+		<Column Type="int_4s" Name="sim_inspiral:l_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:polarization"/>
+		<Column Type="lstring" Name="sim_inspiral:waveform"/>
+		<Column Type="real_4" Name="sim_inspiral:phi0"/>
+		<Column Type="real_4" Name="sim_inspiral:inclination"/>
+		<Column Type="ilwd:char" Name="sim_inspiral:simulation_id"/>
+		<Column Type="real_4" Name="sim_inspiral:f_lower"/>
+		<Column Type="int_4s" Name="sim_inspiral:g_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_v"/>
+		<Column Type="real_4" Name="sim_inspiral:beta"/>
+		<Column Type="int_4s" Name="sim_inspiral:g_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha"/>
+		<Column Type="real_4" Name="sim_inspiral:f_final"/>
+		<Column Type="real_4" Name="sim_inspiral:mass1"/>
+		<Column Type="real_4" Name="sim_inspiral:mass2"/>
+		<Column Type="int_4s" Name="sim_inspiral:v_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:eta"/>
+		<Column Type="real_4" Name="sim_inspiral:psi0"/>
+		<Column Type="real_4" Name="sim_inspiral:psi3"/>
+		<Stream Delimiter="," Type="Local" Name="sim_inspiral:table">
+			0,874467372,0,0,0,1.0547725,0,0,"",10.4993,"",1156723212,0,0,0,"sim_inspiral:process_id:0",1156723212,371.3981,0,"TAPER_STARTEND",245.0083,0,0,396.35863,474.84685,0,0,0,0,0,882866621,0,881206274,0,0,0,0,0,0,1156723212,4.4050103,"TaylorF2",0,2.3027313,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3272,1.1079,0,0.24797239,0,0,
+			0,98912000,0,0,0,1.0553966,0,0,"",112.1274,"",1156723340,0,0,0,"sim_inspiral:process_id:0",1156723340,318.44,0,"TAPER_STARTEND",32.433,0,0,416.92698,342.88864,0,0,0,0,0,119525432,0,117920637,0,0,0,0,0,0,1156723340,2.8572208,"TaylorF2",0,3.4853678,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3288,1.1079,0,0.2479454,0,0,
+			0,496351718,0,0,0,1.0685903,0,0,"",38.3297,"",1156723453,0,0,0,"sim_inspiral:process_id:0",1156723453,218.5023,0,"TAPER_STARTEND",337.5518,0,0,423.78291,429.00024,0,0,0,0,0,477974653,0,475404024,0,0,0,0,0,0,1156723453,4.9766621,"TaylorF2",0,0.034546927,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3629,1.1079,0,0.24733716,0,0,
+			0,50833463,0,0,0,1.0539527,0,0,"",66.9005,"",1156723572,0,0,0,"sim_inspiral:process_id:0",1156723572,229.6054,0,"TAPER_STARTEND",228.5814,0,0,285.94742,245.37205,0,0,0,0,0,63735008,0,54863691,0,0,0,0,0,0,1156723572,3.4113785,"TaylorF2",0,2.2083004,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3251,1.1079,0,0.24800761,0,0,
+			0,90569496,0,0,0,1.0560203,0,0,"",120.0314,"",1156723692,0,0,0,"sim_inspiral:process_id:0",1156723692,374.9988,0,"TAPER_STARTEND",34.0558,0,0,468.1573,387.2141,0,0,0,0,0,77645540,0,86722850,0,0,0,0,0,0,1156723692,0.72889594,"TaylorF2",0,2.5143422,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3304,1.1079,0,0.24791826,0,0,
+			0,918128967,0,0,0,1.0282152,0,0,"",120.4333,"",1156723817,0,0,0,"sim_inspiral:process_id:0",1156723817,303.1028,0,"TAPER_STARTEND",69.2065,0,0,344.53828,321.98737,0,0,0,0,0,910490751,0,912319898,0,0,0,0,0,0,1156723817,3.1078103,"TaylorF2",0,0.72982808,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.2602,1.1079,0,0.24896595,0,0,
+			0,513632535,0,0,0,1.0620383,0,0,"",19.5289,"",1156723939,0,0,0,"sim_inspiral:process_id:0",1156723939,342.4318,0,"TAPER_STARTEND",89.0639,0,0,499.45594,670.127,0,0,0,0,0,514806270,0,520929813,0,0,0,0,0,0,1156723939,4.9996728,"TaylorF2",0,3.2651009,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3459,1.1079,0,0.24764812,0,0,
+			0,502864837,0,0,0,1.0498023,0,0,"",66.0705,"",1156724060,0,0,0,"sim_inspiral:process_id:0",1156724060,212.5476,0,"TAPER_STARTEND",272.1861,0,0,265.65732,247.64145,0,0,0,0,0,499451637,0,490297794,0,0,0,0,0,0,1156724060,5.5657412,"TaylorF2",0,4.8693185,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3145,1.1079,0,0.24818152,0,0,
+			0,572943210,0,0,0,1.0498416,0,0,"",95.7733,"",1156724172,0,0,0,"sim_inspiral:process_id:0",1156724172,325.3329,0,"TAPER_STARTEND",22.9606,0,0,507.49362,411.92055,0,0,0,0,0,556960105,0,561411142,0,0,0,0,0,0,1156724172,2.9299717,"TaylorF2",0,0.76038775,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3146,1.1079,0,0.24817991,0,0,
+			0,80129146,0,0,0,1.0524671,0,0,"",155.5129,"",1156724299,0,0,0,"sim_inspiral:process_id:0",1156724299,536.8223,0,"TAPER_STARTEND",66.2331,0,0,544.06177,601.02518,0,0,0,0,0,95422983,0,90846061,0,0,0,0,0,0,1156724299,1.7915816,"TaylorF2",0,3.2429456,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3213,1.1079,0,0.24807069,0,0,
+			0,693459272,0,0,0,1.0599853,0,0,"",97.1435,"",1156724413,0,0,0,"sim_inspiral:process_id:0",1156724413,202.4398,0,"TAPER_STARTEND",333.5229,0,0,335.54627,267.12346,0,0,0,0,0,676085233,0,678345680,0,0,0,0,0,0,1156724413,0.7315999,"TaylorF2",0,2.5602067,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3406,1.1079,0,0.24774196,0,0,
+			0,189768075,0,0,0,1.0551236,0,0,"",100.2475,"",1156724536,0,0,0,"sim_inspiral:process_id:0",1156724536,161.9063,0,"TAPER_STARTEND",183.3414,0,0,323.30619,259.25655,0,0,0,0,0,207467317,0,210077047,0,0,0,0,0,0,1156724536,0.71622094,"TaylorF2",0,3.0023478,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3281,1.1079,0,0.24795723,0,0,
+			0,656518459,0,0,0,1.0544603,0,0,"",59.033,"",1156724660,0,0,0,"sim_inspiral:process_id:0",1156724660,365.6052,0,"TAPER_STARTEND",207.15,0,0,484.77443,382.55174,0,0,0,0,0,641051054,0,649194478,0,0,0,0,0,0,1156724660,1.9406441,"TaylorF2",0,3.7883504,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3264,1.1079,0,0.24798584,0,0,
+			0,405706882,0,0,0,1.0564098,0,0,"",46.5689,"",1156724776,0,0,0,"sim_inspiral:process_id:0",1156724776,423.2163,0,"TAPER_STARTEND",202.664,0,0,584.30252,442.86294,0,0,0,0,0,388658523,0,385020494,0,0,0,0,0,0,1156724776,1.0982589,"TaylorF2",0,3.6852144,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3314,1.1079,0,0.24790123,0,0,
+			0,991701841,0,0,0,1.046814,0,0,"",42.6996,"",1156724894,0,0,0,"sim_inspiral:process_id:0",1156724895,231.3761,0,"TAPER_STARTEND",280.2121,0,0,249.62001,284.68697,0,0,0,0,0,2353191,0,998133182,0,0,0,0,0,0,1156724894,2.8521914,"TaylorF2",0,6.1390002,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3069,1.1079,0,0.24830221,0,0,
+			0,622342586,0,0,0,1.0618835,0,0,"",141.4615,"",1156725019,0,0,0,"sim_inspiral:process_id:0",1156725019,326.6052,0,"TAPER_STARTEND",11.4987,0,0,551.48311,370.28641,0,0,0,0,0,628693580,0,636988401,0,0,0,0,0,0,1156725019,1.3448049,"TaylorF2",0,5.9066495,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3455,1.1079,0,0.24765525,0,0,
+			0,483901977,0,0,0,1.0598302,0,0,"",115.7995,"",1156725138,0,0,0,"sim_inspiral:process_id:0",1156725138,348.4782,0,"TAPER_STARTEND",110.5756,0,0,450.47228,429.10928,0,0,0,0,0,490284204,0,491594076,0,0,0,0,0,0,1156725138,5.4426438,"TaylorF2",0,2.6544502,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3402,1.1079,0,0.24774898,0,0,
+			0,354943990,0,0,0,1.0545383,0,0,"",162.0761,"",1156725255,0,0,0,"sim_inspiral:process_id:0",1156725255,342.6509,0,"TAPER_STARTEND",108.4908,0,0,395.7181,609.15675,0,0,0,0,0,372513771,0,370162487,0,0,0,0,0,0,1156725255,3.6621723,"TaylorF2",0,0.012388258,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3266,1.1079,0,0.24798248,0,0,
+			0,935640811,0,0,0,1.0540698,0,0,"",98.0447,"",1156725376,0,0,0,"sim_inspiral:process_id:0",1156725376,319.494,0,"TAPER_STARTEND",293.4501,0,0,577.81898,459.86731,0,0,0,0,0,955688714,0,956667900,0,0,0,0,0,0,1156725376,4.2576749,"TaylorF2",0,0.22019593,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3254,1.1079,0,0.24800259,0,0,
+			0,943342208,0,0,0,1.0381035,0,0,"",91.5684,"",1156725498,0,0,0,"sim_inspiral:process_id:0",1156725498,311.223,0,"TAPER_STARTEND",326.2863,0,0,526.22871,424.97013,0,0,0,0,0,946980714,0,952253103,0,0,0,0,0,0,1156725498,3.6538719,"TaylorF2",0,6.1903013,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.2849,1.1079,0,0.24863204,0,0,
+			0,54329156,0,0,0,1.0534838,0,0,"",137.3452,"",1156725620,0,0,0,"sim_inspiral:process_id:0",1156725620,131.9913,0,"TAPER_STARTEND",148.8196,0,0,206.17134,223.74088,0,0,0,0,0,57242631,0,51341533,0,0,0,0,0,0,1156725620,6.1523675,"TaylorF2",0,3.87582,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3239,1.1079,0,0.24802761,0,0,
+			0,495556116,0,0,0,1.0688206,0,0,"",52.9105,"",1156725741,0,0,0,"sim_inspiral:process_id:0",1156725741,325.4727,0,"TAPER_STARTEND",277.5366,0,0,361.03235,371.51435,0,0,0,0,0,475529909,0,475161314,0,0,0,0,0,0,1156725741,2.8314441,"TaylorF2",0,3.1961536,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3635,1.1079,0,0.24732591,0,0,
+			0,58794736,0,0,0,1.0504693,0,0,"",81.8662,"",1156725858,0,0,0,"sim_inspiral:process_id:0",1156725858,425.8408,0,"TAPER_STARTEND",179.1438,0,0,679.34583,541.58025,0,0,0,0,0,46323537,0,52661895,0,0,0,0,0,0,1156725858,2.2300528,"TaylorF2",0,6.060246,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3162,1.1079,0,0.24815406,0,0,
+			0,507730007,0,0,0,1.0493305,0,0,"",56.3313,"",1156725980,0,0,0,"sim_inspiral:process_id:0",1156725980,457.453,0,"TAPER_STARTEND",241.0438,0,0,520.62112,466.18313,0,0,0,0,0,514004468,0,521693229,0,0,0,0,0,0,1156725980,3.648743,"TaylorF2",0,3.1740173,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3217,1.1011,0,0.2479274,0,0,
+			0,824761390,0,0,0,1.0479555,0,0,"",126.7451,"",1156726098,0,0,0,"sim_inspiral:process_id:0",1156726098,503.4859,0,"TAPER_STARTEND",54.9615,0,0,576.55024,507.12209,0,0,0,0,0,805622100,0,806717634,0,0,0,0,0,0,1156726098,4.1913572,"TaylorF2",0,2.7286861,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3098,1.1079,0,0.24825656,0,0,
+			0,533592462,0,0,0,1.0469322,0,0,"",74.452,"",1156726216,0,0,0,"sim_inspiral:process_id:0",1156726216,319.7021,0,"TAPER_STARTEND",273.1664,0,0,433.53438,379.5066,0,0,0,0,0,542067050,0,542516231,0,0,0,0,0,0,1156726216,3.489424,"TaylorF2",0,3.4455964,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3072,1.1079,0,0.24829751,0,0,
+			0,486916303,0,0,0,1.0378249,0,0,"",55.5838,"",1156726338,0,0,0,"sim_inspiral:process_id:0",1156726338,464.8436,0,"TAPER_STARTEND",268.8557,0,0,513.62211,504.34445,0,0,0,0,0,494162559,0,486036777,0,0,0,0,0,0,1156726338,4.1715109,"TaylorF2",0,0.38318024,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.2842,1.1079,0,0.24864204,0,0,
+			0,253446817,0,0,0,1.0447238,0,0,"",50.4955,"",1156726457,0,0,0,"sim_inspiral:process_id:0",1156726457,275.3876,0,"TAPER_STARTEND",130.8086,0,0,587.58324,463.9401,0,0,0,0,0,242813348,0,235761404,0,0,0,0,0,0,1156726457,0.89362598,"TaylorF2",0,5.7153596,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3016,1.1079,0,0.24838436,0,0,
+			0,657985925,0,0,0,1.0406071,0,0,"",97.0665,"",1156726572,0,0,0,"sim_inspiral:process_id:0",1156726572,389.7926,0,"TAPER_STARTEND",330.5225,0,0,660.1187,525.18971,0,0,0,0,0,666385412,0,666588544,0,0,0,0,0,0,1156726572,2.8709052,"TaylorF2",0,6.2477513,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.2912,1.1079,0,0.24854062,0,0,
+			0,376154661,0,0,0,1.0554746,0,0,"",64.4133,"",1156726694,0,0,0,"sim_inspiral:process_id:0",1156726694,325.773,0,"TAPER_STARTEND",208.2125,0,0,456.36351,353.66113,0,0,0,0,0,360654830,0,365239620,0,0,0,0,0,0,1156726694,3.3859653,"TaylorF2",0,2.8429839,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.329,1.1079,0,0.24794202,0,0,
+			0,162905693,0,0,0,0.9983263,0,0,"",148.0779,"",1156726816,0,0,0,"sim_inspiral:process_id:0",1156726816,330.0663,0,"TAPER_STARTEND",9.0793,0,0,729.85112,419.63455,0,0,0,0,0,172441482,0,163093566,0,0,0,0,0,0,1156726816,1.194734,"TaylorF2",0,3.2578516,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.1873,1.1079,0,0.24970081,0,0,
+			0,937552690,0,0,0,1.1098222,0,0,"",90.9295,"",1156726936,0,0,0,"sim_inspiral:process_id:0",1156726936,245.345,0,"TAPER_STARTEND",200.3795,0,0,420.61084,341.05158,0,0,0,0,0,936322212,0,945874691,0,0,0,0,0,0,1156726936,1.5467194,"TaylorF2",0,5.192499,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.1079,1.4729,0,0.24499946,0,0,
+			0,801767349,0,0,0,1.042074,0,0,"",173.3824,"",1156727060,0,0,0,"sim_inspiral:process_id:0",1156727060,221.9017,0,"TAPER_STARTEND",207.849,0,0,388.18044,377.71889,0,0,0,0,0,799665212,0,799523591,0,0,0,0,0,0,1156727060,2.0722273,"TaylorF2",0,2.9897747,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.2949,1.1079,0,0.24848578,0,0,
+			0,219166040,0,0,0,1.0556305,0,0,"",62.1478,"",1156727181,0,0,0,"sim_inspiral:process_id:0",1156727181,360.3946,0,"TAPER_STARTEND",227.1147,0,0,458.27433,376.2154,0,0,0,0,0,240199089,0,237789630,0,0,0,0,0,0,1156727181,6.2093419,"TaylorF2",0,2.3758358,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3294,1.1079,0,0.24793524,0,0,
+			0,872993946,0,0,0,1.0553186,0,0,"",119.8881,"",1156727292,0,0,0,"sim_inspiral:process_id:0",1156727292,337.8607,0,"TAPER_STARTEND",148.1483,0,0,518.99886,494.69068,0,0,0,0,0,854415655,0,859411239,0,0,0,0,0,0,1156727292,1.2336357,"TaylorF2",0,5.9243151,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3286,1.1079,0,0.24794878,0,0,
+			0,513787984,0,0,0,1.0609543,0,0,"",70.5188,"",1156727420,0,0,0,"sim_inspiral:process_id:0",1156727420,173.033,0,"TAPER_STARTEND",158.915,0,0,301.36179,227.73929,0,0,0,0,0,500339508,0,506085395,0,0,0,0,0,0,1156727420,3.9397926,"TaylorF2",0,4.2992207,"sim_inspiral:simulation_id:0",30,0,0,0,0,0,0,1.3431,1.1079,0,0.24769788,0,0
+		</Stream>
+	</Table>
+</LIGO_LW>
+<LIGO_LW>
+	<Table Name="sngl_inspiral:table">
+		<Column Type="real_4" Name="sngl_inspiral:cont_chisq"/>
+		<Column Type="real_4" Name="sngl_inspiral:bank_chisq"/>
+		<Column Type="int_4s" Name="sngl_inspiral:chisq_dof"/>
+		<Column Type="real_8" Name="sngl_inspiral:end_time_gmst"/>
+		<Column Type="real_8" Name="sngl_inspiral:event_duration"/>
+		<Column Type="real_4" Name="sngl_inspiral:chisq"/>
+		<Column Type="real_4" Name="sngl_inspiral:spin1y"/>
+		<Column Type="real_4" Name="sngl_inspiral:spin1x"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha"/>
+		<Column Type="real_4" Name="sngl_inspiral:coa_phase"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha2"/>
+		<Column Type="real_4" Name="sngl_inspiral:mchirp"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha1"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha6"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha4"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha5"/>
+		<Column Type="ilwd:char" Name="sngl_inspiral:event_id"/>
+		<Column Type="real_4" Name="sngl_inspiral:chi"/>
+		<Column Type="int_4s" Name="sngl_inspiral:cont_chisq_dof"/>
+		<Column Type="real_4" Name="sngl_inspiral:spin2y"/>
+		<Column Type="real_4" Name="sngl_inspiral:tau2"/>
+		<Column Type="real_4" Name="sngl_inspiral:tau3"/>
+		<Column Type="real_4" Name="sngl_inspiral:tau0"/>
+		<Column Type="real_4" Name="sngl_inspiral:tau4"/>
+		<Column Type="real_4" Name="sngl_inspiral:tau5"/>
+		<Column Type="real_8" Name="sngl_inspiral:template_duration"/>
+		<Column Type="int_4s" Name="sngl_inspiral:impulse_time"/>
+		<Column Type="int_4s" Name="sngl_inspiral:impulse_time_ns"/>
+		<Column Type="real_4" Name="sngl_inspiral:rsqveto_duration"/>
+		<Column Type="lstring" Name="sngl_inspiral:channel"/>
+		<Column Type="real_4" Name="sngl_inspiral:mtotal"/>
+		<Column Type="real_4" Name="sngl_inspiral:alpha3"/>
+		<Column Type="real_4" Name="sngl_inspiral:spin1z"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma5"/>
+		<Column Type="real_4" Name="sngl_inspiral:spin2x"/>
+		<Column Type="real_4" Name="sngl_inspiral:f_final"/>
+		<Column Type="real_4" Name="sngl_inspiral:beta"/>
+		<Column Type="ilwd:char" Name="sngl_inspiral:process_id"/>
+		<Column Type="real_4" Name="sngl_inspiral:snr"/>
+		<Column Type="int_4s" Name="sngl_inspiral:bank_chisq_dof"/>
+		<Column Type="real_4" Name="sngl_inspiral:kappa"/>
+		<Column Type="real_4" Name="sngl_inspiral:eff_distance"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma7"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma6"/>
+		<Column Type="lstring" Name="sngl_inspiral:search"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma4"/>
+		<Column Type="real_4" Name="sngl_inspiral:mass1"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma2"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma1"/>
+		<Column Type="real_4" Name="sngl_inspiral:mass2"/>
+		<Column Type="real_4" Name="sngl_inspiral:ttotal"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma0"/>
+		<Column Type="real_4" Name="sngl_inspiral:spin2z"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma9"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma8"/>
+		<Column Type="real_4" Name="sngl_inspiral:Gamma3"/>
+		<Column Type="real_4" Name="sngl_inspiral:eta"/>
+		<Column Type="real_4" Name="sngl_inspiral:psi0"/>
+		<Column Type="int_4s" Name="sngl_inspiral:end_time"/>
+		<Column Type="real_4" Name="sngl_inspiral:amplitude"/>
+		<Column Type="real_4" Name="sngl_inspiral:psi3"/>
+		<Column Type="int_4s" Name="sngl_inspiral:end_time_ns"/>
+		<Column Type="lstring" Name="sngl_inspiral:ifo"/>
+		<Column Type="real_8" Name="sngl_inspiral:sigmasq"/>
+		<Stream Delimiter="," Type="Local" Name="sngl_inspiral:table">
+			0,0,0,0,0,0,0,0,0,0,0,1.0547725,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4351,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3272,0,0,1.1079,0,0,0,0,0,0,0.24797239,0,1156723212,0,0,874467372,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0553966,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4367,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3288,0,0,1.1079,0,0,0,0,0,0,0.2479454,0,1156723340,0,0,98912000,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0685903,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4708,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3629,0,0,1.1079,0,0,0,0,0,0,0.24733716,0,1156723453,0,0,496351718,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0539527,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.433,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3251,0,0,1.1079,0,0,0,0,0,0,0.24800761,0,1156723572,0,0,50833463,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0560203,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4383,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3304,0,0,1.1079,0,0,0,0,0,0,0.24791826,0,1156723692,0,0,90569496,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0282152,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.3681,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.2602,0,0,1.1079,0,0,0,0,0,0,0.24896595,0,1156723817,0,0,918128967,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0620383,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4538,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3459,0,0,1.1079,0,0,0,0,0,0,0.24764812,0,1156723939,0,0,513632535,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0498023,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4224,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3145,0,0,1.1079,0,0,0,0,0,0,0.24818152,0,1156724060,0,0,502864837,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0498416,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4225,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3146,0,0,1.1079,0,0,0,0,0,0,0.24817991,0,1156724172,0,0,572943210,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0524671,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4292,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3213,0,0,1.1079,0,0,0,0,0,0,0.24807069,0,1156724299,0,0,80129146,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0599853,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4485,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3406,0,0,1.1079,0,0,0,0,0,0,0.24774196,0,1156724413,0,0,693459272,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0551236,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.436,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3281,0,0,1.1079,0,0,0,0,0,0,0.24795723,0,1156724536,0,0,189768075,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0544603,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4343,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3264,0,0,1.1079,0,0,0,0,0,0,0.24798584,0,1156724660,0,0,656518459,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0564098,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4393,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3314,0,0,1.1079,0,0,0,0,0,0,0.24790123,0,1156724776,0,0,405706882,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.046814,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4148,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3069,0,0,1.1079,0,0,0,0,0,0,0.24830221,0,1156724894,0,0,991701841,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0618835,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4534,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3455,0,0,1.1079,0,0,0,0,0,0,0.24765525,0,1156725019,0,0,622342586,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0598302,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4481,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3402,0,0,1.1079,0,0,0,0,0,0,0.24774898,0,1156725138,0,0,483901977,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0545383,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4345,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3266,0,0,1.1079,0,0,0,0,0,0,0.24798248,0,1156725255,0,0,354943990,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0540698,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4333,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3254,0,0,1.1079,0,0,0,0,0,0,0.24800259,0,1156725376,0,0,935640811,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0381035,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.3928,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.2849,0,0,1.1079,0,0,0,0,0,0,0.24863204,0,1156725498,0,0,943342208,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0534838,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4318,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3239,0,0,1.1079,0,0,0,0,0,0,0.24802761,0,1156725620,0,0,54329156,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0688206,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4714,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3635,0,0,1.1079,0,0,0,0,0,0,0.24732591,0,1156725741,0,0,495556116,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0504693,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4241,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3162,0,0,1.1079,0,0,0,0,0,0,0.24815406,0,1156725858,0,0,58794736,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0493305,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4228,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3217,0,0,1.1011,0,0,0,0,0,0,0.2479274,0,1156725980,0,0,507730007,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0479555,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4177,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3098,0,0,1.1079,0,0,0,0,0,0,0.24825656,0,1156726098,0,0,824761390,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0469322,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4151,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3072,0,0,1.1079,0,0,0,0,0,0,0.24829751,0,1156726216,0,0,533592462,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0378249,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.3921,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.2842,0,0,1.1079,0,0,0,0,0,0,0.24864204,0,1156726338,0,0,486916303,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0447238,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4095,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3016,0,0,1.1079,0,0,0,0,0,0,0.24838436,0,1156726457,0,0,253446817,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0406071,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.3991,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.2912,0,0,1.1079,0,0,0,0,0,0,0.24854062,0,1156726572,0,0,657985925,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0554746,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4369,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.329,0,0,1.1079,0,0,0,0,0,0,0.24794202,0,1156726694,0,0,376154661,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,0.9983263,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.2952,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.1873,0,0,1.1079,0,0,0,0,0,0,0.24970081,0,1156726816,0,0,162905693,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.1098222,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.5808,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.1079,0,0,1.4729,0,0,0,0,0,0,0.24499946,0,1156726936,0,0,937552690,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.042074,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4028,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.2949,0,0,1.1079,0,0,0,0,0,0,0.24848578,0,1156727060,0,0,801767349,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0556305,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4373,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3294,0,0,1.1079,0,0,0,0,0,0,0.24793524,0,1156727181,0,0,219166040,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0553186,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.4365,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3286,0,0,1.1079,0,0,0,0,0,0,0.24794878,0,1156727292,0,0,872993946,"",0,
+			0,0,0,0,0,0,0,0,0,0,0,1.0609543,0,0,0,0,"sngl_inspiral:event_id:0",0,0,0,0,0,0,0,0,0,0,0,0,"",2.451,0,0,0,0,0,0,"sim_inspiral:process_id:0",0,0,0,0,0,0,"",0,1.3431,0,0,1.1079,0,0,0,0,0,0,0.24769788,0,1156727420,0,0,513787984,"",0
+		</Stream>
+	</Table>
+</LIGO_LW>
