@@ -394,10 +394,10 @@ if __name__ == "__main__":
             sim.spin2x = 0.0
             sim.spin2y = 0.0
             sim.spin2z = 0.0
-            for n, det in enumerate(detectors):
-                setattr(sim, det.name[0].lower()+'_end_time', int(end_times_at_detector[n]))
-                setattr(sim, det.name[0].lower()+'_end_time_ns', int(end_times_at_detector[n] % 1 * 1e9))
-                setattr(sim, 'eff_dist_'+det.name[0].lower(), eff_distances[n])
+            for det, end_time, eff_dist  in zip(detectors, end_times_at_detector, eff_distances):
+                setattr(sim, det.name[0].lower()+'_end_time', int(end_time))
+                setattr(sim, det.name[0].lower()+'_end_time_ns', int(end_time % 1 * 1e9))
+                setattr(sim, 'eff_dist_'+det.name[0].lower(), eff_dist)
 
             # construct waveform string that can be parsed by lalsimulation
             #waveform_string = approximant
@@ -434,7 +434,7 @@ if __name__ == "__main__":
         # build and write injection XML document
         xmldoc_mdc = ligolw.Document()
         xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sim_table)
-        xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sngl_table)
+        #xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sngl_table)
         ligolw_utils.write_filename(xmldoc_mdc, "mdc.xml", verbose = True)
         
         # build and write PSD XML document
