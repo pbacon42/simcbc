@@ -60,5 +60,5 @@ for n=1:length(merger_pop)
 endfor
 fclose(fid);
 
-rgers = readcatalog("mergers.txt",{"dist","z","mass1","mass2","RA","dec"}," ")
+mergers = readcatalog("mergers.txt",{"dist","z","mass1","mass2","RA","dec"}," ")
 save -V7 mergers.mat mergers
