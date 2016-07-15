@@ -104,7 +104,7 @@ import lal, lalsimulation
 import lal.series
 
 # BAYESTAR imports.
-import timing
+import timing ## local version of the bayestar timing library
 #from lalinference.bayestar import timing
 from lalinference.bayestar import filter
 from lalinference.bayestar import ligolw as ligolw_bayestar
