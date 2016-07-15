@@ -50,9 +50,9 @@ DETECTOR_NOISE_MODELS = {
     }
 
 DETECTOR_PSD_FILES = {
-    'H1': "aLIGO_80Mpc_ASD.txt",
-    'L1': "aLIGO_80Mpc_ASD.txt",
-    'V1': "Adv_Virgo_20Mpc_ASD.txt"
+    'H1': "aLIGO_80Mpc_PSD.txt",
+    'L1': "aLIGO_80Mpc_PSD.txt",
+    'V1': "Adv_Virgo_20Mpc_PSD.txt"
     }
 
 ZERO_SPIN = {'x': 0., 'y': 0., 'z': 0.}
@@ -381,7 +381,7 @@ if __name__ == "__main__":
                 # compute end time at detector
                 time_delay = detector.time_delay_from_earth_center(RA, dec, geocent_end_time)
                 end_times_at_detector.append(geocent_end_time + time_delay)
-
+            
             # select injection if sufficient SNR at one of the detectors
             if all(snr < threshold for snr in SNRs):
                 continue
@@ -458,5 +458,3 @@ if __name__ == "__main__":
         # build and write PSD XML document
         xmldoc_psd = lal.series.make_psd_xmldoc(PSDs,None)
         ligolw_utils.write_filename(xmldoc_psd, "psd.xml", verbose = True)
-
-        
