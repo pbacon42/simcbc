@@ -24,4 +24,6 @@ Produces mdc.xml and psd.xml
 4. Run little_hope
 
 bayestar_sim_to_tmpltbank mdc.xml -o templates.xml
-bayestar_littlehope --waveform "TaylorF2" --template-bank templates.xml --reference-psd psd.xml -o results.xml mdc.xml
+bayestar_littlehope --detector H1 --detector L1 --min-triggers 2 --snr-threshold 4.0 --reference-psd psds_2016-17.xml --template-bank templates.xml --waveform "TaylorF2threePointFivePN" mdc.xml -o coinc.xml
+bayestar_localize_coincs --waveform "TaylorF2threePointFivePN" --f-low 30 coinc.xml
+bayestar_plot_allsky 0.toa_phoa_snr.fits.gz --contour 90 --radec long lat -o skymap.png
