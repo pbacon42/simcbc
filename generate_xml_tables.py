@@ -449,6 +449,9 @@ if __name__ == "__main__":
             time_from_start += stride
             counter += 1
 
+
+        print "{} mergers selected".format(counter)
+        
         # build and write injection XML document
         xmldoc_mdc = ligolw.Document()
         xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sim_table)
