@@ -34,16 +34,25 @@ from glue.ligolw import ilwd
 from glue.ligolw import lsctables
 from glue.ligolw import utils as ligolw_utils
 
+import timing
+from lalinference.bayestar import filter
+
 DETECTOR_SITES = {
     'H1': LALDetectorIndexLHODIFF,
     'L1': LALDetectorIndexLLODIFF,
     'V1': LALDetectorIndexVIRGODIFF
     }
 
-DETECTOR_NOISES = {
+DETECTOR_NOISE_MODELS = {
     'H1': SimNoisePSDaLIGOZeroDetHighPower,
     'L1': SimNoisePSDaLIGOZeroDetHighPower,
     'V1': SimNoisePSDVirgo
+    }
+
+DETECTOR_PSD_FILES = {
+    'H1': "aLIGO_80Mpc_ASD.txt",
+    'L1': "aLIGO_80Mpc_ASD.txt",
+    'V1': "Adv_Virgo_20Mpc_ASD.txt"
     }
 
 ZERO_SPIN = {'x': 0., 'y': 0., 'z': 0.}
@@ -137,14 +146,20 @@ class CBCTemplate(object):
                                  binary.distance * 1.0e6 * LAL_PC_SI, binary.z, binary.iota, binary.lambda1, binary.lambda2,
                                  self.waveform_flags, self.nonGRparams, self.amplitude0, self.phase0, self.approximant)
 
-    #def time_template(self, sampling_rate, segment_duration, freq_min, freq_max):
-    #        """
-    #        """
-    # Time-domain approximants
-    #
-    # [hplus,hcross] = SimInspiralTD(phiRef,sampling_period,m1,m2,s1x,s1y,s1z,s2x,s2y,s2z,
-    #                                    f_min,f_ref,r,z,iota,lambda1,lambda2,waveform_flags,nonGR_params,
-    #                                    amplitudeO,phaseO,approximant)
+    def time_template(self, binary):
+        """
+        Compute time-domain template model of the gravitational wave for a given compact binary.
+        """
+    
+        return SimInspiralTD(self.phi_ref, 1.0 / self.sampling_rate,
+                                 binary.mass1 * LAL_MSUN_SI, binary.mass2 * LAL_MSUN_SI,
+                                 binary.spin1['x'], binary.spin1['y'], binary.spin1['z'],
+                                 binary.spin2['x'], binary.spin2['y'], binary.spin2['z'],
+                                 self.freq_min, self.freq_ref,
+                                 binary.distance * 1.0e6 * LAL_PC_SI, binary.z,
+                                 binary.iota, binary.lambda1, binary.lambda2,
+                                 self.waveform_flags, self.nonGRparams, self.amplitude0, self.phase0, self.approximant)
+                                     
     # hstrain = SimDetectorStrainREAL8TimeSeries(hplus, hcross, ra, dec, psi, det)
     # hstrain.epoch += time_at_coalescence # set end time to time_at_coalescence
     # times = time_at_coalescence + sampling_period * numpy.arange(hstrain.data.length)  
@@ -201,8 +216,11 @@ class Detector(object):
             
             power_spec_density = CreateREAL8FrequencySeries("spectrum", 0.0, freq_min,
                                         freq_resolution, DimensionlessUnit, length);
-            SimNoisePSD(power_spec_density, freq_min, DETECTOR_NOISES[self.name])
-
+            # SimNoisePSD(power_spec_density, freq_min, DETECTOR_NOISES[self.name])
+            data = numpy.loadtxt(DETECTOR_PSD_FILES[self.name],dtype={'names':('freq','psd'), 'formats':('f8','f8')})
+            model = timing.InterpolatedPSD(data['freq'], data['psd'])
+            power_spec_density.data.data = model(filter.abscissa(power_spec_density))
+            
             return power_spec_density
 
     def effective_distance(self, distance, time_at_coalescence, RA, dec, iota, psi):
@@ -288,12 +306,12 @@ if __name__ == "__main__":
     jitter = 10    # s
     threshold = 5 # SNR selection threshold
 
-    approximant = "TaylorF2"
+    approximant = "TaylorT4"
     amplitude_order = 0
     phase_order = -1
     sampling_rate = 1024 # Hz
     segment_duration = 64 # s
-    freq_min = 30 # Hz
+    freq_min = 10 # Hz
     freq_max = sampling_rate/2.0
 
     # create new sim and sngl tables
