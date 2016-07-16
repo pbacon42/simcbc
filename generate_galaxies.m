@@ -35,3 +35,7 @@ for n=1:length(z)
     fprintf(fid,"%2.4f %4.4f %4.4f\n",z(n),d_comoving(n),dL(n));
 endfor
 fclose(fid);
+
+# XXX should use readcatalog to reduce errors XXX
+galaxies = load("galaxies.txt");
+save -V7 galaxies.mat galaxies
