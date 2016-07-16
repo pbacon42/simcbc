@@ -85,7 +85,7 @@ class CompactBinary(object):
         redshift -- redshift of the binary. If zero, cosmology is ignored.
         spin1, spin2 -- spin vectors of binary components
         lambda1, lambda2 -- dimensionless tidal parameter of binary components
-        iota -- inclination angle with respect to the line of sight
+        iota -- inclination angle with respect to the line of sight in degrees
         """
         self.mass1 = mass1
         self.mass2 = mass2
@@ -115,7 +115,7 @@ class CBCTemplate(object):
         freq_min -- start frequency in Hz
         freq_max -- end frequency in Hz
         freq_ref -- reference frequency for precessing spins in Hz
-        phi_ref  -- final phase in radians
+        phi_ref  -- final phase in degrees
         nonGRparams -- non GR parameters
         """
         
@@ -127,7 +127,7 @@ class CBCTemplate(object):
         self.freq_min = freq_min # Hz, start frequency
         self.freq_max = freq_max # Hz, end frequency
         self.freq_ref = freq_ref # Hz, reference frequency for precessing spins
-        self.phi_ref  = phi_ref  # final phase in radians
+        self.phi_ref  = phi_ref  # final phase in degrees
         self.nonGRparams = nonGRparams # non GR parameters
         self.waveform_flags = SimInspiralCreateWaveformFlags()
         
@@ -138,12 +138,12 @@ class CBCTemplate(object):
         
         frequency_resolution = 1.0 / self.segment_duration
 
-        return SimInspiralFD(self.phi_ref, frequency_resolution,
+        return SimInspiralFD(math.radians(self.phi_ref), frequency_resolution,
                                  binary.mass1 * LAL_MSUN_SI, binary.mass2 * LAL_MSUN_SI,
                                  binary.spin1['x'], binary.spin1['y'], binary.spin1['z'],
                                  binary.spin2['x'], binary.spin2['y'], binary.spin2['z'],
                                  self.freq_min, self.freq_max, self.freq_ref,
-                                 binary.distance * 1.0e6 * LAL_PC_SI, binary.z, binary.iota, binary.lambda1, binary.lambda2,
+                                 binary.distance * 1.0e6 * LAL_PC_SI, binary.z, math.radians(binary.iota), binary.lambda1, binary.lambda2,
                                  self.waveform_flags, self.nonGRparams, self.amplitude0, self.phase0, self.approximant)
 
     def time_template(self, binary):
@@ -151,13 +151,13 @@ class CBCTemplate(object):
         Compute time-domain template model of the gravitational wave for a given compact binary.
         """
     
-        return SimInspiralTD(self.phi_ref, 1.0 / self.sampling_rate,
+        return SimInspiralTD(math.radians(self.phi_ref), 1.0 / self.sampling_rate,
                                  binary.mass1 * LAL_MSUN_SI, binary.mass2 * LAL_MSUN_SI,
                                  binary.spin1['x'], binary.spin1['y'], binary.spin1['z'],
                                  binary.spin2['x'], binary.spin2['y'], binary.spin2['z'],
                                  self.freq_min, self.freq_ref,
                                  binary.distance * 1.0e6 * LAL_PC_SI, binary.z,
-                                 binary.iota, binary.lambda1, binary.lambda2,
+                                 math.radians(binary.iota), binary.lambda1, binary.lambda2,
                                  self.waveform_flags, self.nonGRparams, self.amplitude0, self.phase0, self.approximant)
                                      
     # hstrain = SimDetectorStrainREAL8TimeSeries(hplus, hcross, ra, dec, psi, det)
@@ -187,7 +187,7 @@ class Detector(object):
         """ Compute antenna response
         """
         fplus,fcross,_,_ = antenna.response(time_at_coalescence,
-                                    RA, dec, math.degrees(iota), psi, 'degree', self.name)
+                                    RA, dec, iota, psi, 'degree', self.name)
         return fplus, fcross
         
     def project_strain(self, hplus, hcross, time_at_coalescence, RA, dec, iota, psi):
@@ -302,11 +302,11 @@ if __name__ == "__main__":
     detectors = [H1, L1]
     
     time_from_start = 0  # s
-    stride = 120   # s
-    jitter = 10    # s
-    threshold = 5 # SNR selection threshold
+    stride = 3600   # s
+    jitter = 600    # s
+    threshold = 4 # SNR selection threshold
 
-    approximant = "TaylorT4"
+    approximant = "TaylorT4treePN"
     amplitude_order = 0
     phase_order = -1
     sampling_rate = 1024 # Hz
@@ -349,9 +349,9 @@ if __name__ == "__main__":
 
             # generate end_time and remaining angle randomly
             geocent_end_time = START_O2 + time_from_start + rand.uniform(-jitter/2,jitter/2)
-            iota = 2.0 * math.pi * rand.random()  # XXX degrees instead!? XXX
-            phi_ref = 2.0 * math.pi * rand.random()
-            psi = 2.0 * math.pi * rand.random()
+            iota = 360.0 * rand.random()  # all angles are in degrees
+            phi_ref = 360.0 * rand.random()
+            psi = 360.0 * rand.random()
 
             binary = CompactBinary(mass1, mass2, distance, redshift,
                                      ZERO_SPIN, ZERO_SPIN, 0.0, 0.0, iota)
@@ -381,7 +381,8 @@ if __name__ == "__main__":
                 # compute end time at detector
                 time_delay = detector.time_delay_from_earth_center(RA, dec, geocent_end_time)
                 end_times_at_detector.append(geocent_end_time + time_delay)
-            
+
+
             # select injection if sufficient SNR at one of the detectors
             if all(snr < threshold for snr in SNRs):
                 continue
@@ -395,14 +396,14 @@ if __name__ == "__main__":
             sim.f_lower = model.freq_min
             sim.geocent_end_time = int(geocent_end_time)
             sim.geocent_end_time_ns = int(geocent_end_time % 1 * 1e9)
-            sim.inclination = iota
-            sim.latitude = dec
-            sim.longitude = RA
+            sim.inclination = math.radians(iota)
+            sim.latitude = math.radians(dec)
+            sim.longitude = math.radians(RA)
             sim.mass1 = binary.mass1
             sim.mass2 = binary.mass2
             sim.mchirp = binary.mchirp
             sim.eta = binary.eta
-            sim.polarization = psi
+            sim.polarization = math.radians(psi)
             sim.taper = 'TAPER_STARTEND'
             sim.distance = binary.distance
             sim.numrel_data = ""
@@ -448,7 +449,6 @@ if __name__ == "__main__":
             # increment time for next injection
             time_from_start += stride
             counter += 1
-
 
         print "{} mergers selected".format(counter)
         
