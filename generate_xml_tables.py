@@ -324,7 +324,7 @@ if __name__ == "__main__":
     sngl_table = lsctables.New(lsctables.SnglInspiralTable,
                             columns=lsctables.SnglInspiralTable.validcolumns)
 
-    counter = 1
+    counter = 0
 
     # loop through input file
     with open(sys.argv[1]) as infile:
