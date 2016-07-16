@@ -46,9 +46,10 @@ class LIGOLWContentHandler(ligolw.LIGOLWContentHandler):
 
 data_adv = numpy.loadtxt("Adv_Virgo_20Mpc_PSD.txt",dtype={'names':('f','psd'), 'formats':('f8','f8')})
 data_aligo = numpy.loadtxt("aLIGO_80Mpc_PSD.txt",dtype={'names':('f','psd'), 'formats':('f8','f8')})
+data_O1 = numpy.loadtxt("O1-H1-GDS-CALIB_STRAIN.txt",dtype={'names':('f','asd'), 'formats':('f8','f8')})
 
-filename = "psds_2016-17.xml"
-#filename = "psd.xml"
+#filename = "psds_2016-17.xml"
+filename = "psd.xml"
 duration = 32 # sec
 sample_rate = 1024 # Hz
 
@@ -69,9 +70,11 @@ for detector, model in psd_models.iteritems():
 
 plot.loglog(data_adv['f'],data_adv['psd'], label="V1 from Prospects paper")
 plot.loglog(data_aligo['f'],data_aligo['psd'], label="H1 and L1 from Prospects paper")
+plot.loglog(data_O1['f'],data_O1['asd']**2, label="H1 -- O1")
 
 plot.legend(loc=1)
 plot.grid(True)
 plot.xlabel('Frequency Hz')
 plot.ylabel('Strain 1/Hz')
+plot.ylim([1e-47, 1e-38])
 plot.show()
