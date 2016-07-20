@@ -420,6 +420,7 @@ if __name__ == "__main__":
 
             # construct waveform string that can be parsed by lalsimulation
             #waveform_string = approximant
+            # phase_order = lalsimulation.GetOrderFromString(s)
             #if not PN_ORDERS[phase_order] == -1:
             #    waveform_string += opts.order
             sim.waveform = approximant
