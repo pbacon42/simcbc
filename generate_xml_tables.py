@@ -50,8 +50,8 @@ DETECTOR_NOISE_MODELS = {
     }
 
 DETECTOR_PSD_FILES = {
-    'H1': "aLIGO_80Mpc_PSD.txt",
-    'L1': "aLIGO_80Mpc_PSD.txt",
+    'H1': "aLIGO_80Mpc_PSD_extended.txt",
+    'L1': "aLIGO_80Mpc_PSD_extended.txt",
     'V1': "Adv_Virgo_20Mpc_PSD.txt"
     }
 
