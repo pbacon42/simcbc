@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE LIGO_LW SYSTEM "http://ldas-sw.ligo.caltech.edu/doc/ligolwAPI/html/ligolw_dtd.txt">
+<LIGO_LW>
+	<Table Name="sim_inspiral:table">
+		<Column Type="real_4" Name="sim_inspiral:theta0"/>
+		<Column Type="int_4s" Name="sim_inspiral:geocent_end_time_ns"/>
+		<Column Type="int_4s" Name="sim_inspiral:amp_order"/>
+		<Column Type="real_8" Name="sim_inspiral:end_time_gmst"/>
+		<Column Type="real_4" Name="sim_inspiral:coa_phase"/>
+		<Column Type="real_4" Name="sim_inspiral:mchirp"/>
+		<Column Type="int_4s" Name="sim_inspiral:numrel_mode_min"/>
+		<Column Type="int_4s" Name="sim_inspiral:numrel_mode_max"/>
+		<Column Type="lstring" Name="sim_inspiral:source"/>
+		<Column Type="real_4" Name="sim_inspiral:latitude"/>
+		<Column Type="lstring" Name="sim_inspiral:numrel_data"/>
+		<Column Type="int_4s" Name="sim_inspiral:geocent_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:spin2x"/>
+		<Column Type="real_4" Name="sim_inspiral:spin2y"/>
+		<Column Type="real_4" Name="sim_inspiral:spin2z"/>
+		<Column Type="ilwd:char" Name="sim_inspiral:process_id"/>
+		<Column Type="int_4s" Name="sim_inspiral:h_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:distance"/>
+		<Column Type="int_4s" Name="sim_inspiral:t_end_time"/>
+		<Column Type="lstring" Name="sim_inspiral:taper"/>
+		<Column Type="real_4" Name="sim_inspiral:longitude"/>
+		<Column Type="int_4s" Name="sim_inspiral:v_end_time_ns"/>
+		<Column Type="int_4s" Name="sim_inspiral:bandpass"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_l"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_h"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_g"/>
+		<Column Type="int_4s" Name="sim_inspiral:t_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:spin1y"/>
+		<Column Type="real_4" Name="sim_inspiral:spin1x"/>
+		<Column Type="real_4" Name="sim_inspiral:spin1z"/>
+		<Column Type="int_4s" Name="sim_inspiral:h_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_t"/>
+		<Column Type="int_4s" Name="sim_inspiral:l_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha2"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha3"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha1"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha6"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha4"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha5"/>
+		<Column Type="int_4s" Name="sim_inspiral:l_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:polarization"/>
+		<Column Type="lstring" Name="sim_inspiral:waveform"/>
+		<Column Type="real_4" Name="sim_inspiral:phi0"/>
+		<Column Type="real_4" Name="sim_inspiral:inclination"/>
+		<Column Type="ilwd:char" Name="sim_inspiral:simulation_id"/>
+		<Column Type="real_4" Name="sim_inspiral:f_lower"/>
+		<Column Type="int_4s" Name="sim_inspiral:g_end_time_ns"/>
+		<Column Type="real_4" Name="sim_inspiral:eff_dist_v"/>
+		<Column Type="real_4" Name="sim_inspiral:beta"/>
+		<Column Type="int_4s" Name="sim_inspiral:g_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:alpha"/>
+		<Column Type="real_4" Name="sim_inspiral:f_final"/>
+		<Column Type="real_4" Name="sim_inspiral:mass1"/>
+		<Column Type="real_4" Name="sim_inspiral:mass2"/>
+		<Column Type="int_4s" Name="sim_inspiral:v_end_time"/>
+		<Column Type="real_4" Name="sim_inspiral:eta"/>
+		<Column Type="real_4" Name="sim_inspiral:psi0"/>
+		<Column Type="real_4" Name="sim_inspiral:psi3"/>
+		<Stream Delimiter="," Type="Local" Name="sim_inspiral:table">
+			0,500341892,0,0,0,1.0528583,0,0,"",1.5057828,"",1157011131,0,0,0,"sim_inspiral:process_id:0",1157011131,127.2915,0,"TAPER_STARTEND",3.6476474,0,0,226.40687,181.62641,0,0,0,0,0,514971971,0,511331796,0,0,0,0,0,0,1157011131,0.14989153,"TaylorT4treePN",0,3.0784437,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3223,1.1079,0,0.24805417,0,0,
+			0,280675649,0,0,0,1.0581606,0,0,"",-0.95079953,"",1157014652,0,0,0,"sim_inspiral:process_id:0",1157014652,226.6951,0,"TAPER_STARTEND",2.8915533,0,0,283.64548,231.31092,0,0,0,0,0,262353658,0,268969774,0,0,0,0,0,0,1157014652,2.6456297,"TaylorT4treePN",0,5.5093181,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3359,1.1079,0,0.2478239,0,0,
+			0,529144287,0,0,0,1.0564098,0,0,"",0.85534921,"",1157018588,0,0,0,"sim_inspiral:process_id:0",1157018588,175.7519,0,"TAPER_STARTEND",1.9301858,0,0,272.34165,281.40868,0,0,0,0,0,547961950,0,544977426,0,0,0,0,0,0,1157018588,0.60934943,"TaylorT4treePN",0,3.6394806,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3314,1.1079,0,0.24790123,0,0,
+			0,561640262,0,0,0,1.0553186,0,0,"",-1.3059985,"",1157022033,0,0,0,"sim_inspiral:process_id:0",1157022033,30.1955,0,"TAPER_STARTEND",0.84047028,0,0,68.394924,54.167016,0,0,0,0,0,564124345,0,571271181,0,0,0,0,0,0,1157022033,2.0199982,"TaylorT4treePN",0,5.8548865,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3286,1.1079,0,0.24794878,0,0,
+			0,194127798,0,0,0,1.0539917,0,0,"",-0.7271478,"",1157025741,0,0,0,"sim_inspiral:process_id:0",1157025741,242.7551,0,"TAPER_STARTEND",3.7950701,0,0,283.51794,244.74217,0,0,0,0,0,172959327,0,176062345,0,0,0,0,0,0,1157025741,4.883343,"TaylorT4treePN",0,3.4323106,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3252,1.1079,0,0.24800593,0,0,
+			0,171262502,0,0,0,1.0590152,0,0,"",1.0396054,"",1157029248,0,0,0,"sim_inspiral:process_id:0",1157029248,122.2621,0,"TAPER_STARTEND",6.1791637,0,0,226.84612,154.33586,0,0,0,0,0,175457000,0,184530735,0,0,0,0,0,0,1157029248,0.93041212,"TaylorT4treePN",0,3.1414488,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3381,1.1079,0,0.24778569,0,0,
+			0,91150999,0,0,0,1.0512925,0,0,"",-1.188948,"",1157033026,0,0,0,"sim_inspiral:process_id:0",1157033026,119.5963,0,"TAPER_STARTEND",3.9600264,0,0,169.70754,132.52835,0,0,0,0,0,71775674,0,77786922,0,0,0,0,0,0,1157033026,1.9892795,"TaylorT4treePN",0,0.55430451,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3183,1.1079,0,0.24811991,0,0,
+			0,30552387,0,0,0,1.0543432,0,0,"",-1.475929,"",1157036640,0,0,0,"sim_inspiral:process_id:0",1157036640,133.9088,0,"TAPER_STARTEND",4.455466,0,0,208.68133,169.87545,0,0,0,0,0,24307727,0,28085708,0,0,0,0,0,0,1157036640,4.8870327,"TaylorT4treePN",0,0.98445926,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3261,1.1079,0,0.24799087,0,0,
+			0,631826639,0,0,0,1.0548896,0,0,"",-1.0987441,"",1157039938,0,0,0,"sim_inspiral:process_id:0",1157039938,201.553,0,"TAPER_STARTEND",4.7619057,0,0,258.57174,211.4283,0,0,0,0,0,623924732,0,615954875,0,0,0,0,0,0,1157039938,3.777487,"TaylorT4treePN",0,3.1038014,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.3275,1.1079,0,0.24796734,0,0,
+			0,382355213,0,0,0,1.053132,0,0,"",0.35095081,"",1157043805,0,0,0,"sim_inspiral:process_id:0",1157043805,237.6108,0,"TAPER_STARTEND",2.5279698,0,0,242.17961,279.35101,0,0,0,0,0,368674278,0,375774145,0,0,0,0,0,0,1157043805,1.6490421,"TaylorT4treePN",0,0.53456839,"sim_inspiral:simulation_id:0",10,0,0,0,0,0,0,1.323,1.1079,0,0.24804257,0,0
+		</Stream>
+	</Table>
+</LIGO_LW>
