@@ -16,7 +16,7 @@ CMD_LITTLEHOPE = '{home}/my_bayestar_littlehope  {opts} {simdir}/{mdc_file} -o c
 
 LOCALCOINCS_OPTS = '--waveform "TaylorF2threePointFivePN" --f-low 30'
 CMD_LOCALCOINCS = 'bayestar_localize_coincs {opts} coinc.xml\n'
-CMD_PLOT = 'for f in *.fits.gz; do bayestar_plot_allsky $f --contour 90 --radec 0.0 0.0 -o ${f%.*}.png; done'
+CMD_PLOT = 'for f in *.fits.gz; do bayestar_plot_allsky $f --contour 90 --radec 0.0 0.0 -o ${f%.*}.png; done\n'
 CMD_JOBSUB = '/opt/sge/bin/lx24-amd64/qsub -N {} -o {} -e {} {} {}'
 
 if __name__ == "__main__":
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         batch_filename = "{}/batch.sh".format(simdir)
         with open(batch_filename, "w") as batch_script:
             batch_script.write("#!/usr/bin/env bash\n")
-            batch_script.write("cd {simdir}".format(simdir=fullpath_simdir))
+            batch_script.write("cd {simdir}\n".format(simdir=fullpath_simdir))
             batch_script.write(CMD_LITTLEHOPE.format(mdc_file=file,
                                                      simdir=fullpath_simdir,
                                                      home=LITTLEHOPE_HOME,
