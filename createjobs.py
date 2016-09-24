@@ -12,23 +12,30 @@ from glue.ligolw import utils as ligolw_utils
 
 LITTLEHOPE_HOME = os.getcwd()
 LITTLEHOPE_OPTS = '--detector H1 --detector L1 --min-triggers 2 --snr-threshold 4.0 --reference-psd {home}/psds_2016-17.xml --template-bank {home}/templates.xml --waveform "TaylorF2threePointFivePN"'.format(home=LITTLEHOPE_HOME)
-CMD_LITTLEHOPE = '{home}/my_bayestar_littlehope  {opts} {mdc_file} -o {simdir}/coinc.xml\n'
+CMD_LITTLEHOPE = '{home}/my_bayestar_littlehope  {opts} {simdir}/{mdc_file} -o coinc.xml\n'
 
 LOCALCOINCS_OPTS = '--waveform "TaylorF2threePointFivePN" --f-low 30'
-CMD_LOCALCOINCS = 'bayestar_localize_coincs {opts} {simdir}/coinc.xml\n'
-CMD_JOBSUB = '/opt/sge/bin/lx24-amd64/qsub -N {} -o {} -e {} {}'
+CMD_LOCALCOINCS = 'bayestar_localize_coincs {opts} coinc.xml\n'
+CMD_JOBSUB = '/opt/sge/bin/lx24-amd64/qsub -N {} -o {} -e {} {} {}'
 
 if __name__ == "__main__":
 
     # parse input args
-    if len(sys.argv) > 0:
-        indir = sys.argv[1]
+    if len(sys.argv) <= 1:
+        sys.exit()
+
+    indir = sys.argv[1]
     
     # list contents of input dir
     if os.path.isdir(indir):
         files = os.listdir(indir)
     else:
         sys.exit()
+
+    if len(sys.argv) > 2:
+        jobsub_opts = sys.argv[2]
+    else:
+        jobsub_opts = ""
 
     # loop on coincX.xml
     submission_cmds = []
@@ -48,7 +55,7 @@ if __name__ == "__main__":
         batch_filename = "{}/batch.sh".format(simdir)
         with open(batch_filename, "w") as batch_script:
             batch_script.write("#!/usr/bin/env bash\n")
-            batch_script.write("cd {}\n".format(fullpath_simdir))
+            batch_script.write("cd {simdir}",simdir=fullpath_simdir)
             batch_script.write(CMD_LITTLEHOPE.format(mdc_file=file,
                                                      simdir=fullpath_simdir,
                                                      home=LITTLEHOPE_HOME,
@@ -64,6 +71,7 @@ if __name__ == "__main__":
         submission_cmds.append(CMD_JOBSUB.format(simdir, 
                                                  "{}/{}.out".format(fullpath_simdir,simdir), 
                                                  "{}/{}.err".format(fullpath_simdir,simdir), 
+                                                 jobsub_opts,
                                                  batch_filename))
 
     outfile = open('jobsubmission.sh', 'w')
