@@ -56,7 +56,7 @@ if __name__ == "__main__":
         batch_filename = "{}/batch.sh".format(simdir)
         with open(batch_filename, "w") as batch_script:
             batch_script.write("#!/usr/bin/env bash\n")
-            batch_script.write("cd {simdir}",simdir=fullpath_simdir)
+            batch_script.write("cd {simdir}".format(simdir=fullpath_simdir))
             batch_script.write(CMD_LITTLEHOPE.format(mdc_file=file,
                                                      simdir=fullpath_simdir,
                                                      home=LITTLEHOPE_HOME,
