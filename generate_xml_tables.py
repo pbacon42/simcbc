@@ -71,7 +71,7 @@ PN_ORDERS = {
     }
 
 START_O2 = 1156723217 # Thu Sep 01 00:00:00 GMT 2016
-STOP_O2 = 1172361617   # Wed Mar 01 00:00:00 GMT 2017
+STOP_O2 = 1172361617  # Wed Mar 01 00:00:00 GMT 2017
 
 class CompactBinary(object):
     """
@@ -305,6 +305,7 @@ if __name__ == "__main__":
     stride = 3600   # s
     jitter = 600    # s
     threshold = 4 # SNR selection threshold
+    inject_per_file = 10
 
     approximant = "TaylorT4treePN"
     amplitude_order = 0
@@ -320,15 +321,15 @@ if __name__ == "__main__":
         pass
     
     lsctables.use_in(LIGOLWContentHandler)
-    sim_table = lsctables.New(lsctables.SimInspiralTable)
-    sngl_table = lsctables.New(lsctables.SnglInspiralTable,
-                            columns=lsctables.SnglInspiralTable.validcolumns)
+    sim_tables = []
+    #sngl_table = lsctables.New(lsctables.SnglInspiralTable,
+    #                        columns=lsctables.SnglInspiralTable.validcolumns)
 
     counter = 0
-
+    
     # loop through input file
     with open(sys.argv[1]) as infile:
-      
+    
         for line in infile:
 
             # ignore comment lines
@@ -425,39 +426,45 @@ if __name__ == "__main__":
             #    waveform_string += opts.order
             sim.waveform = approximant
 
+            # create new sim table if number of injections exceeds requested size
+            if counter % inject_per_file == 0:
+                sim_tables.append(lsctables.New(lsctables.SimInspiralTable))
+        
             # append sim entry
-            sim_table.append(sim)
+            sim_tables[-1].append(sim)
 
             # create sngl entry
-            sngl = _empty_row(lsctables.SnglInspiral)
-            sngl.mass1 = binary.mass1
-            sngl.mass2 = binary.mass2
-            sngl.mchirp = binary.mchirp
-            sngl.eta = binary.eta
-            sngl.mtotal = binary.mass1 + binary.mass2
-            sngl.spin1x = 0.0
-            sngl.spin1y = 0.0
-            sngl.spin1z = 0.0
-            sngl.spin2x = 0.0
-            sngl.spin2y = 0.0
-            sngl.spin2z = 0.0
-            sngl.end_time = int(geocent_end_time)
-            sngl.end_time_ns = int(geocent_end_time % 1 * 1e9)
+            # sngl = _empty_row(lsctables.SnglInspiral)
+            # sngl.mass1 = binary.mass1
+            # sngl.mass2 = binary.mass2
+            # sngl.mchirp = binary.mchirp
+            # sngl.eta = binary.eta
+            # sngl.mtotal = binary.mass1 + binary.mass2
+            # sngl.spin1x = 0.0
+            # sngl.spin1y = 0.0
+            # sngl.spin1z = 0.0
+            # sngl.spin2x = 0.0
+            # sngl.spin2y = 0.0
+            # sngl.spin2z = 0.0
+            # sngl.end_time = int(geocent_end_time)
+            # sngl.end_time_ns = int(geocent_end_time % 1 * 1e9)
 
-            # append sngl entry
-            sngl_table.append(sngl)
+            # # append sngl entry
+            # sngl_table.append(sngl)
 
             # increment time for next injection
             time_from_start += stride
+            
             counter += 1
 
         print "{} mergers selected".format(counter)
-        
-        # build and write injection XML document
-        xmldoc_mdc = ligolw.Document()
-        xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sim_table)
-        #xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sngl_table)
-        ligolw_utils.write_filename(xmldoc_mdc, "mdc.xml", verbose = True)
+
+        for n, sim_table in enumerate(sim_tables):
+            # build and write injection XML document
+            xmldoc_mdc = ligolw.Document()
+            xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sim_table)
+            #xmldoc_mdc.appendChild(ligolw.LIGO_LW()).appendChild(sngl_table)
+            ligolw_utils.write_filename(xmldoc_mdc, "mdc{}.xml".format(n+1), verbose = True)
         
         # build and write PSD XML document
         xmldoc_psd = lal.series.make_psd_xmldoc(PSDs,None)
