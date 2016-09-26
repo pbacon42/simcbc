@@ -31,6 +31,8 @@ http://arxiv.org/abs/1304.0670
 aLIGO (mid-stage, low-sensitivity curve -- 80 Mpc)
 adV (early-stage, low-sensitivity curve -- 20 Mpc)
 
+XXX TO BE CHECKED XXX
+
 4. Run little_hope on laptop
 
 bayestar_sim_to_tmpltbank mdc.xml -o templates.xml
