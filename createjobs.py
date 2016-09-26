@@ -63,7 +63,7 @@ if __name__ == "__main__":
                                                      opts=LITTLEHOPE_OPTS))
             batch_script.write(CMD_LOCALCOINCS.format(simdir=fullpath_simdir,
                                                       opts=LOCALCOINCS_OPTS))
-            batch_script.write(CMD_PLOT)
+            # batch_script.write(CMD_PLOT)
             batch_script.write('echo "hello word!"')
 
         os.chmod(batch_filename, 0744)
