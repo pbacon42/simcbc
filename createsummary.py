@@ -32,7 +32,7 @@ for coinc, sngl_inspirals in ligolw_bayestar.coinc_and_sngl_inspirals_for_xmldoc
     end_time = lal.LIGOTimeGPS(sim_inspiral.geocent_end_time, sim_inspiral.geocent_end_time_ns)
     (RA,dec) = sim_inspiral.ra_dec
 
-    print "{gps};{date},{mass1};{mass2};{dist};{snr};{RA};{dec}".format(gps=end_time,
+    print '{gps};"{date}";{mass1};{mass2};{dist};{snr};{RA};{dec}'.format(gps=end_time,
                                                                         date=lal.gpstime.gps_to_utc(end_time).isoformat(' '),
                                                                         mass1=sim_inspiral.mass1,
                                                                         mass2=sim_inspiral.mass2,
