@@ -13,3 +13,7 @@ Notes
 
 5. Check merger rate in Table 2 of Dominik et al 2012. Fix according to
    assumption on metallicity.
+
+6. Check that psds_2016-17.xml is indeed representative of O2
+
+7. Update according to new O2 dates   
