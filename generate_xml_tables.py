@@ -70,8 +70,11 @@ PN_ORDERS = {
     'pseudoFourPN'     : 8,
     }
 
-START_O2 = 1156723217 # Thu Sep 01 00:00:00 GMT 2016
-STOP_O2 = 1172361617  # Wed Mar 01 00:00:00 GMT 2017
+START_O2 = 1161993617 # Thu Nov 01 00:00:00 GMT 2016
+STOP_O2 =  1178841617 # Wed May 15 00:00:00 GMT 2017
+
+# fix random seed
+random.seed(1159107896)
 
 class CompactBinary(object):
     """
@@ -325,10 +328,13 @@ if __name__ == "__main__":
     #sngl_table = lsctables.New(lsctables.SnglInspiralTable,
     #                        columns=lsctables.SnglInspiralTable.validcolumns)
 
-    counter = 0
+    counter_all = counter_detected = 0
     
     # loop through input file
     with open(sys.argv[1]) as infile:
+
+        numoflines = sum(1 for _ in infile)
+        random_times = numpy.sort(rand.randint(START_O2, STOP_O2, numoflines))
     
         for line in infile:
 
@@ -348,8 +354,11 @@ if __name__ == "__main__":
             end_times_at_detector = []
             PSDs = {}
 
-            # generate end_time and remaining angle randomly
-            geocent_end_time = START_O2 + time_from_start + rand.uniform(-jitter/2,jitter/2)
+            # generate end_time
+            # geocent_end_time = START_O2 + time_from_start + rand.uniform(-jitter/2,jitter/2)
+            geocent_end_time = random_times[counter_all]
+
+            # generate remaining angles randomly
             iota = 360.0 * rand.random()  # all angles are in degrees
             phi_ref = 360.0 * rand.random()
             psi = 360.0 * rand.random()
@@ -384,11 +393,13 @@ if __name__ == "__main__":
                 end_times_at_detector.append(geocent_end_time + time_delay)
 
 
+            counter_all += 1
+            
             # select injection if sufficient SNR at one of the detectors
             if all(snr < threshold for snr in SNRs):
                 continue
 
-            print "{} -- m1={} Msun m2={} Msun d={} Mpc -- SNR = {}".format(counter,
+            print "{} -- m1={} Msun m2={} Msun d={} Mpc -- SNR = {}".format(counter_detected,
                                             binary.mass1, binary.mass2, binary.distance, SNRs)
         
             # create sim entry
@@ -427,7 +438,7 @@ if __name__ == "__main__":
             sim.waveform = approximant
 
             # create new sim table if number of injections exceeds requested size
-            if counter % inject_per_file == 0:
+            if counter_detected % inject_per_file == 0:
                 sim_tables.append(lsctables.New(lsctables.SimInspiralTable))
         
             # append sim entry
@@ -455,9 +466,9 @@ if __name__ == "__main__":
             # increment time for next injection
             time_from_start += stride
             
-            counter += 1
+            counter_detected += 1
 
-        print "{} mergers selected".format(counter)
+        print "{} mergers selected".format(counter_detected)
 
         for n, sim_table in enumerate(sim_tables):
             # build and write injection XML document
